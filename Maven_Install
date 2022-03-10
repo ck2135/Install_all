@@ -1,0 +1,23 @@
+sudo apt update
+sudo apt install openjdk-11-jdk -y
+
+java -version
+
+sudo apt-get update -y
+cd /opt/
+wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
+
+tar -xvzf apache-maven-3.8.4-bin.tar.gz
+sudo mv apache-maven-3.8.4 maven
+
+sudo vi /etc/profile.d/mavenenv.sh
+
+Add the following lines:-
+---------------------------
+export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
+export M2_HOME=/opt/maven
+export PATH=${M2_HOME}/bin:${PATH}
+
+sudo chmod +x /etc/profile.d/mavenenv.sh
+source /etc/profile.d/mavenenv.sh
+mvn --version
