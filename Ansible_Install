@@ -1,0 +1,11 @@
+We have to Install Ansible on Controller:-
+-------------------------------------------
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+
+We have to Install Python on Client servers:-
+------------------------------------------------
+sudo apt update
+sudo apt install python
